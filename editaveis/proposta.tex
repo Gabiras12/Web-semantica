@@ -29,3 +29,71 @@ Não há informação semântica rica descrito explicitamente na ontologia. Pode
 Audiobook, basicamente são livros narrados. Ou seja, são gravações dos conteúdos de livros, cujo o mesmo é lido. Estes audiobook posuem diversos formatos informacionais, como MP3 e WMA, entre outro, podendo ser pagos ou gratuitos, dependendo da plataforma à qual os audibooks, encontram-se disponíveis.
 Ideal para os leitores que gostam de praticar o habito da leitura, porém não dispõem o tempo necessário para exercer esta atividade. Estes audiobooks, podem possuir diversas funcionalidade que enriquecem a esculta, como efeitos sonoros, variações no tom de voz, entre outros meios que evitam a ociosidade na esculta.
 Possuem uma quantidade de exemplares no idioma português relativamente baixa, porém possuem uma grande variedade de conteúdo internacional, principalmente no idioma inglês, um dos maiores mercados de audiobooks disponível.
+
+\chapter{Descrição sobre o Protégé}\label{cap4}
+
+A ferramenta Protége é um software de código aberto desenvolvido pelo “Stanford Center for Biomedical Informatics Research” da universidade “Stanford University School of Medicine”, o qual fornece uma interface gráfica com um conjunto de ferramentas para o desenvolvimento de ontologias \cite{Protege}.
+
+A ferramenta possibilita dois tipos principais de trabalho, sendo estes o desenvolvimento online através do “WebProtégé” ou o desenvolvimento através de um software instalado localmente o “Protégé Desktop”, ambas gratuitas com um amplo conjunto de tutoriais disponíveis no site da empresa.
+
+Este projete se concentrara na versão para desktop Protege-5.0.0-beta-17, está versão encontra-se em desenvolvimento, construída para fins de teste, não possuindo nenhum tipo de lançamento oficial disponível, na páginas de download da ferramenta. É possível obter uma cópia do código fonte da ferramenta através do repositório no github através do link: \cite{GIT}.
+
+A ferramenta oferece suporte para a criação das principais funcionalidades de uma ontologia, como a criação de classes com suas respectivas hierarquias. A definição de relacionamentos entre os dados, a definição de propriedades dos objetos. Além de possuir a possibilidade de visualização do trabalho desenvolvido através de gráficos gerados pela mesma.
+
+ \begin{figure}[ht]
+  \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/protege.eps}
+  \caption{Gráfico gerado com a ferramenta Protégé, com relacionamentos referentes ao audioBook Game of Thrones.}
+  \label{fig:protege}
+\end{figure}
+
+\section{Descrição da ontologia criada}
+
+A ontologia desenvolvida nesse trabalho é apenas ilustrativa, uma vez que a modelagem não contou com participação de nenhum especialista no assunto. O que será apresentado a seguir é apenas uma ideia inicial para a equipe de realizar o projeto descrito nesse trabalho. 
+
+\subsection{Modelagem de classes}
+
+Para chagar-se às classes implementadas no projeto, foi utilizada a técnica de \textit{card sorting} - \textit{Card sorting} é um método usado para facilitar design ou validadar a arquitetura da informação. Em uma sessão de card sorting, os participantes organizam os tópicos em categorias que fazem sentido \cite{cardsorting} - após essa atividade, chegou-se a algumas classes, mostradas a seguir.
+
+\begin{description}
+  \item[Marcações] \hfill \\
+  Uma vez que o objetivo da ontologia é a estruturação semântica de um audiobook com suporte a \textit{tags}, está classe representa as marcações de conteúdo ao decorrer do áudio.
+  \item[Autor] \hfill \\
+  Uma das principais caracteristicas de audiobooks são os autores, ou seja, é importante ter essa informação semânticamente.
+  \item[Editora] \hfill \\
+  Classe que descreve a editora do audiobook.
+  \item[Idioma] \hfill \\
+  Classe que descreve a idioma do audiobook.
+  \item[Faixa Etária] \hfill \\
+  Classe que descreve a idade recomendavel para o público do audiobook, assim podemos diferencias conteúdo para adultos de conteúdos de crianças.
+  \item[Copyright] \hfill \\
+  Classe que descreve os diretiros sobre o audiobook.
+\end{description}
+
+
+\subsection{Mapa mental}
+
+Para a estruturação das classes e informações da ontologia, foi executado a técnica de mapa mental. A ferramenta xMind foi utilizada para a implementação da técnica. A figura \ref{fig:xmind} é o resultado dessa atividade.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/xmind.eps}
+  \caption{Mapa mental da ontologia de audiobooks.}
+  \label{fig:xmind}
+\end{figure}
+
+Com a atividade de mapa mental foi possivel identifacar novas classes, como por exemplo a classe “Metadados”. Essa classe é a classe pai de todas que praticamente todas as outra classes e possui propriedades fundamentais para a descrição semântica do audiobook. Uma das propriedades fundamentais dessa classe é o titulo e a descrição. Essa propriedades caracterizam várias \textit{querys} do usuário, sendo de grande influência no resultado da busca.
+
+\subsection{Implementação no Protegê}
+
+Com a estruturação do mapa mental, a implimentação no protegê se torna bem prática, uma vez que esse processo se torna apenas em transcrever a informação do mapa metal para a ferramenta protegê. 
+
+A figura \ref{fig:protege} é o resultado da modelagem da ontologia após a criação de algumas instâncias para teste e exemplo. A figura \ref{fig:rdf} é uma parte do RDF gerado pela ferramenta e é em si a ontologia.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/xmind.eps}
+  \caption{RDF da ontologia de audiobooks}
+  \label{fig:rdf}
+\end{figure}
+
